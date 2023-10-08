@@ -9,7 +9,6 @@ export default function PlayerPanel() {
 	const actualSong = playlist?.songs?.find(
 		(obj) => obj.id === playlist.currentMusicID
 	);
-	console.log(playlist);
 
 	return (
 		<div className='fixed w-full bottom-0 rounded border-t-2 border-gray-800 p-6 bg-gradient-to-r from-indigo-100 to-purple-200'>
@@ -30,9 +29,9 @@ export default function PlayerPanel() {
 				</div>
 			</div>
 			<div className='flex justify-center items-center mb-5'>
-				<NextButton />
-				<TogglePlayButton />
 				<PreviousButton />
+				<TogglePlayButton />
+				<NextButton />
 			</div>
 			<div className='flex justify-center items-center mb-5'>
 				<Progress />

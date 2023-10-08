@@ -9,7 +9,6 @@ export default function Player() {
 	return (
 		<audio
 			id='audio-player'
-			controls
 			src={
 				playlist.songs?.find((obj) => obj.id === playlist.currentMusicID).url
 			}
