@@ -1,36 +1,28 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { playMusic, pauseMusic } from '../../features/playlist';
+import { toggleLecture } from '../../features/playlist';
 import playIcon from '../../assets/play-icon.svg';
 import pauseIcon from '../../assets/pause-icon.svg';
 export default function TogglePlayButton() {
 	const dispatch = useDispatch();
 	const playlist = useSelector((state) => state.playlist);
 	var player = document.getElementById('audio-player');
-	function handlePlay() {
+	function handleTogglePlay() {
 		if (!playlist.play) {
-			dispatch(playMusic());
 			player.play();
 		} else {
-			dispatch(pauseMusic());
 			player.pause();
 		}
+		dispatch(toggleLecture());
 	}
 	return (
 		<button
-			className='rounded-full bg-slate-100 p-2 mx-4'
-			onClick={handlePlay}>
-			{!playlist?.play ? (
-				<img
-					src={playIcon}
-					alt='play'
-				/>
-			) : (
-				<img
-					src={pauseIcon}
-					alt='pause'
-				/>
-			)}
+			className='rounded-full bg-slate-100 p-2 mx-4 outline-none'
+			onClick={handleTogglePlay}>
+			<img
+				src={playlist?.play ? pauseIcon : playIcon}
+				alt='play'
+			/>
 		</button>
 	);
 }

@@ -13,13 +13,26 @@ export const playlist = createSlice({
 			state.songs = action.payload;
 			state.currentMusicID = action.payload[0].id;
 		},
-		playMusic: (state, action) => {
-			state.play = true;
-			console.log('true');
+		toggleLecture: (state, action) => {
+			state.play = !state.play;
 		},
-		pauseMusic: (state, action) => {
-			state.play = false;
-			console.log('false');
+
+		nextSong: (state, action) => {
+			if (action.payload === state.songs.length) {
+				state.currentMusicID = state.songs[0].id;
+			} else {
+				state.currentMusicID = state.songs[action.payload].id;
+			}
+		},
+		previousSong: (state, action) => {
+			if (action.payload < 0) {
+				state.currentMusicID = state.songs[state.songs.length - 1].id;
+			} else {
+				state.currentMusicID = state.songs[action.payload].id;
+			}
+		},
+		changeSong: (state, action) => {
+			state.currentMusicID = action.payload;
 		},
 	},
 });
@@ -30,5 +43,11 @@ export function getMusicsData(action) {
 			.then((data) => dispatch(addBaseSongs(data.playlist)));
 	};
 }
-export const { addBaseSongs, playMusic, pauseMusic } = playlist.actions;
+export const {
+	addBaseSongs,
+	toggleLecture,
+	nextSong,
+	previousSong,
+	changeSong,
+} = playlist.actions;
 export default playlist.reducer;

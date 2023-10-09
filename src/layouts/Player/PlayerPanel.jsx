@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NextButton from './NextButton';
 import PreviousButton from './PreviousButton';
 import Progress from './Progress';
@@ -33,9 +33,7 @@ export default function PlayerPanel() {
 				<TogglePlayButton />
 				<NextButton />
 			</div>
-			<div className='flex justify-center items-center mb-5'>
-				<Progress />
-			</div>
+			<Progress />
 		</div>
 	);
 }
