@@ -12,20 +12,29 @@ export default function Playlist() {
 		dispatch(getMusicsData());
 	}
 	return (
-		<ul className='mt-4 pb-[300px]'>
+		<ul className='mt-4 pb-[300px] w-full'>
 			{playlist?.songs?.length &&
 				playlist.songs.map((song) => (
 					<li
 						onClick={() => dispatch(changeSong(song.id))}
 						className={classNames(
-							'p-2 border-2 font-semibold  hover:bg-indigo-200 text-slate-800 mb-3 rounded cursor-pointer',
+							' flex items-center w-full p-2 ps-3 font-semibold rounded-md text-slate-800 mb-3 cursor-pointer transition-all  ',
 							playlist.currentMusicID === song.id
-								? 'bg-indigo-200'
-								: 'bg-indigo-100'
+								? 'text-white bg-purple-500 border border-purple-600 shadow-[4px_4px_0px_0px_#4c1d95]'
+								: 'bg-orange-50 border border-orange-50 shadow-[4px_4px_0px_0px_#fff7ee]'
 						)}
 						key={song.id}>
-						<span>{song.title} - </span>
-						<span>{song.artist}</span>
+						<div className='me-5'>
+							<img
+								className='h-10 rounded'
+								src={song.img}
+								alt=''
+							/>
+						</div>
+						<div className='flex flex-col'>
+							<span>{song.title}</span>
+							<span>{song.artist}</span>
+						</div>
 					</li>
 				))}
 		</ul>

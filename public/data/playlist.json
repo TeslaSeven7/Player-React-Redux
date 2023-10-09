@@ -4,30 +4,35 @@
       "title": "Impromptu",
       "artist": "Chopin",
       "url": "/songs/chopin-impromptu.mp3",
+      "img": "/img/chopin.jpg",
       "id": "2Js5IxpT"
     },
     {
       "title": "Nocturne n°9",
       "artist": "Chopin",
       "url": "/songs/chopin-nocturne-9.mp3",
+      "img": "/img/chopin.jpg",
       "id": "THkZle2a"
     },
     {
       "title": "Prélude No. 2 in G minor",
       "artist": "Bach",
       "url": "/songs/bach-g-minor.mp3",
+      "img": "/img/chopin.jpg",
       "id": "mCvoHmhS"
     },
     {
       "title": "4 seasons - Winter",
       "artist": "Vivaldi",
       "url": "/songs/vivaldi-winter.mp3",
+      "img": "/img/chopin.jpg",
       "id": "ZT8dk2E9"
     },
     {
       "title": "L'amour est un oiseau rebelle",
       "artist": "Maria Callas",
       "url": "/songs/MariaCallas-l'amour-est-un-oiseau-rebelle.mp3",
+      "img": "/img/chopin.jpg",
       "id": "jTxYUHQ8"
     }
   ]

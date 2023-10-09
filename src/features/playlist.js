@@ -40,7 +40,8 @@ export function getMusicsData(action) {
 	return function (dispatch, getState) {
 		fetch('/data/playlist.json')
 			.then((data) => data.json())
-			.then((data) => dispatch(addBaseSongs(data.playlist)));
+			.then((data) => dispatch(addBaseSongs(data.playlist)))
+			.then((data) => console.log(data));
 	};
 }
 export const {

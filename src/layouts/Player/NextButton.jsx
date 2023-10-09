@@ -22,7 +22,7 @@ export default function NextButton() {
 	}
 	return (
 		<button
-			className='rounded-full bg-slate-400 p-2 w-10 outline-none'
+			className='rounded-full  p-2 w-10 outline-none'
 			onClick={handleClick}>
 			<img
 				src={nextIcon}

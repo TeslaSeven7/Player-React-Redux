@@ -11,22 +11,23 @@ export default function Progress() {
 		player.currentTime = (x / width) * progressData.totalDuration;
 	}
 	return (
-		<div className='max-w-[800px] mx-auto'>
+		<div className=' mx-auto relative'>
 			<div
 				onClick={handleProgressClick}
-				className='bg-slate-900 h-2 rounded cursor-pointer overflow-hidden'>
+				className='bg-amber-300 h-1 rounded cursor-pointer overflow-hidden relative'>
 				<div
 					style={{
 						transform: `scaleX(${
 							progressData.current / progressData.totalDuration
 						})`,
 					}}
-					className='bg-indigo-500  origin-left h-full pointer-events-none'></div>
+					className='bg-white  origin-left h-full pointer-events-none'></div>
 			</div>
-			<div className='flex justify-between'>
-				<span>{formatValue(progressData.current)}</span>
-				<span>{formatValue(progressData.totalDuration)}</span>
-			</div>
+			<div
+				style={{
+					left: (progressData.current / progressData.totalDuration) * 100 + '%',
+				}}
+				className='rounded-full bg-orange-500  h-[14px] w-[14px] absolute -top-[5px] -translate-x-3 border-[3px] border-white'></div>
 		</div>
 	);
 }
