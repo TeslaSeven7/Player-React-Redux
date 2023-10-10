@@ -1,7 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*
+
 .title{
-   text-shadow: 2px 2px 0px white, 4px 4px 0px black, 6px 6px 0px white, 8px 8px 0px black;
-}*/
+   text-shadow: 4px 4px 0px #fde047	
+	
+}
+.ms-10 label{
+    min-width:auto!important;
+    height:10rem;
+    border: 2px dashed #a95cf1;
+    background:#a95cf12e;
+    flex-direction: column;
+    justify-content: center;
+}
+.ms-10 label div{
+    flex-grow:0
+}
+.ms-10 label svg path{
+    fill:#fb9244!important
+}
+.ms-10 label span{
+    font-weight: bold;
+	color: #4b2c14;
+
+}

@@ -12,7 +12,7 @@ export default function Playlist() {
 		dispatch(getMusicsData());
 	}
 	return (
-		<ul className='mt-4 pb-[300px] w-full'>
+		<ul className='mt-4 w-full'>
 			{playlist?.songs?.length &&
 				playlist.songs.map((song) => (
 					<Song
