@@ -11,28 +11,28 @@
       "title": "Nocturne n°9",
       "artist": "Chopin",
       "url": "/songs/chopin-nocturne-9.mp3",
-      "img": "/img/chopin.jpg",
+      "img": "/img/nocturne.jpg",
       "id": "THkZle2a"
     },
     {
       "title": "Prélude No. 2 in G minor",
       "artist": "Bach",
       "url": "/songs/bach-g-minor.mp3",
-      "img": "/img/chopin.jpg",
+      "img": "/img/bach.jpg",
       "id": "mCvoHmhS"
     },
     {
       "title": "4 seasons - Winter",
       "artist": "Vivaldi",
       "url": "/songs/vivaldi-winter.mp3",
-      "img": "/img/chopin.jpg",
+      "img": "/img/vivaldi.png",
       "id": "ZT8dk2E9"
     },
     {
       "title": "L'amour est un oiseau rebelle",
       "artist": "Maria Callas",
       "url": "/songs/MariaCallas-l'amour-est-un-oiseau-rebelle.mp3",
-      "img": "/img/chopin.jpg",
+      "img": "/img/mariaCallas.webp",
       "id": "jTxYUHQ8"
     }
   ]

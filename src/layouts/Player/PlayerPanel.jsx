@@ -19,8 +19,9 @@ export default function PlayerPanel() {
 
 	return (
 		<div className='relative w-full h-full mx-auto bottom-0 p-6  text-black flex flex-col justify-between'>
-			<div className='flex justify-center mb-10'>
+			<div className='flex justify-center mb-10 h-[40rem] w-[40rem] mx-auto my-auto'>
 				<img
+					className='object-cover'
 					src={
 						playlist.songs?.find((obj) => obj.id === playlist.currentMusicID)
 							.img
