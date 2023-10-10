@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fillDurationVariables, updateProgess } from '../features/progress';
+import { nextSong } from '../features/playlist';
 
 export default function Player() {
+	var loop = true;
 	const dispatch = useDispatch();
 	const playlist = useSelector((state) => state.playlist);
 	const audioRef = useRef();
@@ -23,9 +25,22 @@ export default function Player() {
 			);
 		}
 	}
+	function handleEnded(e) {
+		if (!playlist.loop) {
+			const nextIndex =
+				playlist.songs.findIndex(
+					(song) => song.id === playlist.currentMusicID
+				) + 1;
+
+			dispatch(nextSong(nextIndex));
+		} else {
+			loop = true;
+		}
+	}
 	function handleTimeUpdate(e) {
 		dispatch(updateProgess(e.target.currentTime));
 	}
+
 	return (
 		<audio
 			className='outline-none'
@@ -35,6 +50,8 @@ export default function Player() {
 			}
 			ref={audioRef}
 			onLoadedData={handleLoadedData}
-			onTimeUpdate={handleTimeUpdate}></audio>
+			onTimeUpdate={handleTimeUpdate}
+			onEnded={handleEnded}
+			loop={loop}></audio>
 	);
 }

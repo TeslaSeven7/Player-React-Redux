@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import formatValue from '../../utils/formatValue';
 export default function Progress() {
@@ -10,11 +10,12 @@ export default function Progress() {
 		const x = e.clientX - rect.left;
 		player.currentTime = (x / width) * progressData.totalDuration;
 	}
+
 	return (
 		<div className=' mx-auto relative'>
 			<div
-				onClick={handleProgressClick}
-				className='bg-amber-300 h-1 rounded cursor-pointer overflow-hidden relative'>
+				onMouseDown={handleProgressClick}
+				className='bg-amber-300 h-3 rounded-full cursor-pointer overflow-hidden relative border-2 border-black  shadow-[4px_2px_0px_0px_#000000]'>
 				<div
 					style={{
 						transform: `scaleX(${
@@ -27,7 +28,7 @@ export default function Progress() {
 				style={{
 					left: (progressData.current / progressData.totalDuration) * 100 + '%',
 				}}
-				className='rounded-full bg-orange-500  h-[14px] w-[14px] absolute -top-[5px] -translate-x-3 border-[3px] border-white'></div>
+				className='rounded-full bg-white  h-[16px] w-[16px] absolute -top-[2px]  border-[3px] border-black '></div>
 		</div>
 	);
 }
